@@ -14,25 +14,15 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.repository
-    default: "bitnami/tomcat"
-    description: "tomcat image name"
+    default: "bitnami/jenkins"
+    description: "Jenkins image name"
     type: string
-    label: tomcat Image Name
+    label: Jenkins Image Name
   - variable: image.tag
-    default: "9.0.34-debian-10-r13"
-    description: "tomcat image tag"
+    default: "2.222.3-debian-10-r0"
+    description: "Jenkins image tag"
     type: string
     label: Image Tag
-  - variable: webarchive.image.repository
-    default: "ananwaresystems/webarchive"
-    description: "webarchive image name"
-    type: string
-    label: webarchive Image Name
-  - variable: webarchive.image.tag
-    default: "1.0"
-    description: "webarchive image tag"
-    type: string
-    label: webarchive Image Tag
 - variable: tomcatDirectory
   default: "/usr/local/tomcat/webapps"
   description: "Path of the application"
@@ -72,7 +62,7 @@ questions:
   show_subquestion_if: true
   group: "Services and Load Balancing"
   subquestions:
-  - variable: ingress.hosts[0].name
+  - variable: ingress.hostname
     default: "xip.io"
     description: "Hostname to your app installation"
     type: hostname
