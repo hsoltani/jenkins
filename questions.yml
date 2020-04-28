@@ -23,6 +23,19 @@ questions:
     description: "Jenkins image tag"
     type: string
     label: Image Tag
+- variable: jenkinsUser
+  default: "user"
+  description: "User of the application"
+  type: string
+  required: true
+  label: Jenkins Usernname
+  group: "Jenkins Settings"
+- variable: jenkinsPassword
+  default: ""
+  description: "password will be auto-generated if not specified"
+  type: password
+  label: Jenkins Password
+  group: "Jenkins Settings"  
 - variable: tomcatDirectory
   default: "/usr/local/tomcat/webapps"
   description: "Path of the application"
