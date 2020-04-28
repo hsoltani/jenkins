@@ -45,28 +45,28 @@ questions:
   group: "Jenkins Settings"
 - variable: persistence.enabled
   default: false
-  description: "Enable persistent volume for Tomcat"
+  description: "Enable persistent volume for Jenkins"
   type: boolean
   required: true
-  label: Tomcat Persistent Volume Enabled
+  label: Jenkins Persistent Volume Enabled
   show_subquestion_if: true
-  group: "Tomcat Settings"
+  group: "Jenkins Settings"
   subquestions:
   - variable: persistence.size
     default: "10Gi"
-    description: "Tomcat Persistent Volume Size"
+    description: "Jenkins Persistent Volume Size"
     type: string
-    label: Tomcat Volume Size
+    label: Jenkins Volume Size
   - variable: persistence.storageClass
     default: ""
     description: "If undefined or null, uses the default StorageClass. Default to null"
     type: storageclass
-    label: Default StorageClass for Tomcat
+    label: Default StorageClass for Jenkins
   - variable: persistence.existingClaim
     default: ""
     description: "If not empty, uses the specified existing PVC instead of creating new one"
     type: pvc
-    label: Existing Persistent Volume Claim for Tomcat
+    label: Existing Persistent Volume Claim for Jenkins
 - variable: ingress.enabled
   default: true
   description: "Expose app using Layer 7 Load Balancer - ingress"
@@ -83,7 +83,7 @@ questions:
     label: Hostname
 - variable: service.type
   default: "NodePort"
-  description: "Tomcat Service type"
+  description: "Jenkins Service type"
   type: enum
   show_if: "ingress.enabled=false"
   options:
@@ -91,7 +91,7 @@ questions:
   - "NodePort"
   - "LoadBalancer"
   required: true
-  label: Tomcat Service Type
+  label: Jenkins Service Type
   show_subquestion_if: "NodePort"
   group: "Services and Load Balancing"
   subquestions:
